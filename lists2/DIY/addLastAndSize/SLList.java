@@ -1,5 +1,5 @@
 public class SLList {
-    public class IntNode {
+    public class IntNode {//IntNode变成了内部类
         public int item;
         public IntNode next;
         public IntNode(int i, IntNode n) {
@@ -27,11 +27,21 @@ public class SLList {
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
         /* Your Code Here! */
+        IntNode c;
+        last =first;
+        while(last.item!=null){
+        last = last.item;
+        }
+        last = new IntNode(x, null);
     }
 
     /** Returns the number of items in the list using recursion. */
+    //递归用的是if 初始条件 然后关联关系
     public int size() {
         /* Your Code Here! */
+        if (first == null ){
+        return 1;
+        }return 1+first.next.size;
     }
 
 }
